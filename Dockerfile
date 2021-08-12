@@ -14,4 +14,5 @@ RUN apt-get update && \
     apt-get -y install powershell && \
     apt-get clean all && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    pwsh -Command "Install-Module -Name SqlServer -AcceptLicense -Repository PSGallery -Force"
+    pwsh -Command "Install-Module -Name SqlServer -AcceptLicense -Repository PSGallery -Force" &&\
+    ssh-keyscan -t rsa github.com >> /etc/ssh/ssh_known_hosts
