@@ -8,7 +8,13 @@ RUN apt-get update && \
     apt-get install -y software-properties-common apt-utils && \
     apt-add-repository ppa:ansible/ansible && \
     apt-get update && \
-    apt-get install -y ansible wget && \
+    apt-get install -y \
+        ansible \
+        wget \
+        docker-ce-cli \
+        docker-buildx-plugin \
+        docker-compose-plugin \
+    && \
     wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb && \
     dpkg -i packages-microsoft-prod.deb && \
     rm packages-microsoft-prod.deb && \
